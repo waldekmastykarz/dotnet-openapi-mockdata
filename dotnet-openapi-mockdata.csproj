@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>dotnet_openapi_mockdata</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- Define the files to copy -->
+  <ItemGroup>
+    <SpecsFiles Include="specs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="microsoft.openapi" Version="1.6.14" />
+    <PackageReference Include="microsoft.openapi.readers" Version="1.6.14" />
+    <PackageReference Include="njsonschema" Version="11.0.0" />
+  </ItemGroup>
+
+  <!-- Target to copy files after the build -->
+  <Target Name="CopySpecsFiles" AfterTargets="Build">
+    <Copy SourceFiles="@(SpecsFiles)" DestinationFolder="$(OutputPath)specs\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

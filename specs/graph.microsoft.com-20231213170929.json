@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "https://graph.microsoft.com API",
+    "description": "https://graph.microsoft.com API",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "https://graph.microsoft.com"
+    }
+  ],
+  "paths": {
+    "/v1.0/me": {
+      "description": "Provides operations to manage me",
+      "get": {
+        "summary": "Get me",
+        "operationId": "Get.me",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@odata.context": {
+                      "type": "string"
+                    },
+                    "businessPhones": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "givenName": {
+                      "type": "string"
+                    },
+                    "jobTitle": {
+                      "type": "string"
+                    },
+                    "mail": {
+                      "type": "string"
+                    },
+                    "mobilePhone": {
+                      "type": "null"
+                    },
+                    "officeLocation": {
+                      "type": "string"
+                    },
+                    "preferredLanguage": {
+                      "type": "string"
+                    },
+                    "surname": {
+                      "type": "string"
+                    },
+                    "userPrincipalName": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

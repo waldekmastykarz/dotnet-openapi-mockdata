@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "https://graph.microsoft.com API",
+    "description": "https://graph.microsoft.com API",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "https://graph.microsoft.com"
+    }
+  ],
+  "paths": {
+    "/v1.0/me": {
+      "description": "Provides operations to manage me",
+      "get": {
+        "summary": "Get me",
+        "operationId": "Get.me",
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "innerError": {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "request-id": {
+                              "type": "string"
+                            },
+                            "client-request-id": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

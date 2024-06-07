@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "http://api.contoso.com API",
+    "description": "http://api.contoso.com API",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "http://api.contoso.com"
+    }
+  ],
+  "paths": {
+    "/products": {
+      "description": "Provides operations to manage products",
+      "get": {
+        "summary": "Get products",
+        "operationId": "Get.products",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "productCode": {
+                        "type": "string"
+                      },
+                      "productName": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "targetMarket": {
+                        "type": "string"
+                      },
+                      "priceUSD": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ms-generated-by": {
+    "toolName": "Dev Proxy",
+    "toolVersion": "0.17.1"
+  }
+}

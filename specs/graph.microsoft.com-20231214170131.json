@@ -1,0 +1,159 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "https://graph.microsoft.com API",
+    "description": "https://graph.microsoft.com API",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "https://graph.microsoft.com"
+    }
+  ],
+  "paths": {
+    "/v1.0/me": {
+      "description": "Provides operations to manage me",
+      "get": {
+        "summary": "Get me",
+        "operationId": "Get.me",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "request-id": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "client-request-id": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "x-ms-ags-diagnostic": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "x-ms-resource-unit": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "OData-Version": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@odata.context": {
+                      "type": "string"
+                    },
+                    "businessPhones": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "displayName": {
+                      "type": "string"
+                    },
+                    "givenName": {
+                      "type": "string"
+                    },
+                    "jobTitle": {
+                      "type": "string"
+                    },
+                    "mail": {
+                      "type": "string"
+                    },
+                    "mobilePhone": {
+                      "type": "object"
+                    },
+                    "officeLocation": {
+                      "type": "string"
+                    },
+                    "preferredLanguage": {
+                      "type": "string"
+                    },
+                    "surname": {
+                      "type": "string"
+                    },
+                    "userPrincipalName": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "request-id": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "client-request-id": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "x-ms-ags-diagnostic": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "innerError": {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "request-id": {
+                              "type": "string"
+                            },
+                            "client-request-id": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-ms-generated-by": ,
+  "toolName": "Dev Proxy",
+  "toolVersion": "0.14.0"
+}
